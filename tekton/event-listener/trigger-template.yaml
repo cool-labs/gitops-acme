@@ -28,3 +28,9 @@ spec:
             value: $(params.gitrevision)
         pipelineRef:
           name: deploy-using-acm
+        serviceAccountName: pipeline
+        timeout: 1h0m0s
+        workspaces:
+          - name: shared-workspace
+            persistentvolumeclaim:
+              claimName: source-pvc
