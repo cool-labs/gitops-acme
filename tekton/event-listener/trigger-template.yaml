@@ -7,6 +7,8 @@ metadata:
     app: acme-cicd
 spec:
   params:
+    - description: Deployment name
+      name: deploymentname
     - description: The git revision
       name: gitrevision
     - description: The git repository url
@@ -18,6 +20,8 @@ spec:
         generateName: deploy-using-acm-
       spec:
         params:
+          - name: deployment-name
+            value: $(params.deploymentname)
           - name: git-url
             value: $(params.gitrepositoryurl)
           - name: git-revision

@@ -8,6 +8,8 @@ metadata:
     app: acme-cicd-acm
 spec:
   params:
+    - name: deploymentname
+      value: $(body.repository.name)
     - name: gitrevision
       value: $(body.head_commit.id)
     - name: gitrepositoryurl
