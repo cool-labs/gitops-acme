@@ -25,7 +25,7 @@ pipeline   2         29s
 task.tekton.dev/create-namespaces created
 
 > oc create -f tasks/02_create_app.yaml
-task.tekton.dev/etherpad-dev-deployment created
+task.tekton.dev/acme-deployment created
 
 > oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:acme-cicd:pipeline
 clusterrole.rbac.authorization.k8s.io/cluster-admin added: "system:serviceaccount:acme-cicd:pipeline"
