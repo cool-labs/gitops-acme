@@ -13,4 +13,4 @@ spec:
       args:
         - |-
           echo "**** Creating namespaces ****"
-          oc apply -f gitops-acme/acm-resources/namespace.yaml
+          oc apply -f acm-resources/namespace.yaml

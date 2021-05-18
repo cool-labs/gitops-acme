@@ -13,10 +13,10 @@ spec:
       args:
         - |-
           echo "**** DEV ENVIRONMENT: Creating application on RH ACM ****"
-          oc apply -f gitops-acme/acm-resources/application.yaml
+          oc apply -f acm-resources/application.yaml
           echo "**** DEV ENVIRONMENT: Creating channel on RH ACM ****"
-          oc apply -f gitops-acme/acm-resources/channel.yaml
+          oc apply -f acm-resources/channel.yaml
           echo "**** DEV ENVIRONMENT: Creating placementrule on RH ACM ****"
-          oc apply -f gitops-acme/acm-resources/placement-rule.yaml
+          oc apply -f acm-resources/placement-rule.yaml
           echo "**** DEV ENVIRONMENT: Creating subscription on RH ACM ****"
-          oc apply -f gitops-acme/acm-resources/subscription.yaml
+          oc apply -f acm-resources/subscription.yaml

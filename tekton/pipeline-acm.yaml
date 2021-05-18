@@ -35,3 +35,22 @@ spec:
     - name: revision
       value: $(params.git-revision)
       
+  - name: create-namespaces
+    taskRef:
+      kind: Task        
+      name: create-namespaces
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    runAfter:
+    - fetch-repository     
+
+  - name: acme-deployment
+    taskRef:
+      kind: Task        
+      name: acme-deployment
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    runAfter:
+    - create-namespaces      
