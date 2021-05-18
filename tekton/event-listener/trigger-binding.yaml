@@ -1,7 +1,7 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
-  name: acme-cicd-acm-trigger-binding
+  name: acme-cicd-acm
   generation: 1
   namespace: acme-cicd
   labels:

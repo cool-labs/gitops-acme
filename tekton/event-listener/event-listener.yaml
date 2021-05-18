@@ -18,12 +18,12 @@ spec:
   triggers:
     - bindings:
         - kind: TriggerBinding
-          ref: acme-cicd-acm-trigger-binding
+          ref: acme-cicd-acm
       interceptors:
         - cel:
             filter: >-
               header.match('X-GitHub-Event', 'push') && body.ref ==
               'refs/heads/master'
-      name: acme-cicd-acm-trigger-template
+      name: acme-cicd-acm
       template:
-        ref: acme-cicd-acm-trigger-template
+        ref: acme-cicd-acm

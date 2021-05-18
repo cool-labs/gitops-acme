@@ -1,10 +1,10 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
-  name: acme-cicd-acm-trigger-template
+  name: acme-cicd-acm
   namespace: acme-cicd
   labels:
-    app: acme-cicd
+    app: acme-cicd-acm
 spec:
   params:
     - description: Deployment name
