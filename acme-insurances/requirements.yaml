@@ -1,0 +1,25 @@
+Error: unknown flag: --prettyPrint
+Usage:
+  yq read [yaml_file] [path] [flags]
+
+Aliases:
+  read, r
+
+Examples:
+
+yq read things.yaml a.b.c
+yq r - a.b.c (reads from stdin)
+yq r things.yaml a.*.c
+yq r -d1 things.yaml a.array[0].blah
+yq r things.yaml a.array[*].blah
+      
+
+Flags:
+  -d, --doc string   process document index number (0 based, * for all documents) (default "0")
+  -h, --help         help for read
+  -j, --tojson       output as json
+
+Global Flags:
+  -t, --trim      trim yaml output (default true)
+  -v, --verbose   verbose mode
+

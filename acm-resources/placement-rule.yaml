@@ -1,0 +1,36 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: acm-demo-placement-ui
+  namespace: acm-demo
+  labels:
+    app: acm-demo-acme-insurance
+spec:
+  clusterSelector:
+    matchLabels:
+      entorno: ui
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: acm-demo-placement-dev
+  namespace: acm-demo
+  labels:
+    app: acm-demo-acme-insurance
+spec:
+  clusterConditions:
+    - status: 'True'
+      type: ManagedClusterConditionAvailable
+  clusterReplicas: 2
+  clusterSelector:
+    matchExpressions:
+      - key: entorno
+        operator: In
+        values:
+          - dev
+          - local
+      - key: cloud
+        operator: NotIn
+        values:
+          - Google

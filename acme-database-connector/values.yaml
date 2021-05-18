@@ -1,0 +1,3 @@
+global: {}
+acme-database-connector:
+  replicaCount: 1

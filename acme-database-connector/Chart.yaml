@@ -1,0 +1,4 @@
+apiVersion: v2
+version: 0.1.0
+name: acme-database-connector
+description: Chart to configure ArgoCD with the acme-database-connector project and its applications

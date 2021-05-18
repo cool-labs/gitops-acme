@@ -1,0 +1,4 @@
+apiVersion: v2
+version: 0.1.0
+name: acme-middleware
+description: Chart to configure ArgoCD with the acme-middleware project and its applications

@@ -1,0 +1,57 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: acm-demo-subscription-ui
+  namespace: acm-demo
+  annotations: {}
+  labels:
+    app: acm-demo-acme-insurance
+spec:
+  name: acme-ui
+  channel: acm-demo/acm-demo-channel-dockerhub
+  packageOverrides:
+    - packageAlias: acme-ui
+      packageName: acme-ui
+  placement:
+    placementRef:
+      name: acm-demo-placement-ui
+      kind: PlacementRule
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: acm-demo-subscription-middleware
+  namespace: acm-demo
+  annotations: {}
+  labels:
+    app: acm-demo-acme-insurance
+spec:
+  name: acme-middleware
+  channel: acm-demo/acm-demo-channel-dockerhub
+  packageOverrides:
+    - packageAlias: acme-middleware
+      packageName: acme-middleware
+  placement:
+    placementRef:
+      name: acm-demo-placement-dev
+      kind: PlacementRule
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: acm-demo-subscription-database-connector
+  namespace: acm-demo
+  annotations: {}
+  labels:
+    app: acm-demo-acme-insurance
+spec:
+  name: acme-database-connector
+  channel: acm-demo/acm-demo-channel-dockerhub
+  packageOverrides:
+    - packageAlias: acme-database-connector
+      packageName: acme-database-connector
+  placement:
+    placementRef:
+      name: acm-demo-placement-dev
+      kind: PlacementRule
