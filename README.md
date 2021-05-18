@@ -77,3 +77,33 @@ pipelinerun.tekton.dev/deploy-using-acm-run-1 created
 [acme-deployment : acme-deployment] subscription.apps.open-cluster-management.io/acm-demo-subscription-database-connector created
 
 ```
+
+
+# Adding an Event Listener to sync pipeline with Git repository
+
+
+1. Manually creating Event Listener resources (event listener, trigger template & trigger binding).
+
+```console
+
+> cd tekton/event-listener
+
+> oc project acme-cicd
+Now using project "acme-cicd" on server "https://api.cluster-509e.509e.sandbox1047.opentlc.com:6443".
+
+> oc create -f trigger-binding.yaml
+triggerbinding.triggers.tekton.dev/acme-cicd-acm-trigger-binding created
+
+> oc create -f trigger-template.yaml
+triggertemplate.triggers.tekton.dev/acme-cicd-acm-trigger-template created
+
+> oc create -f event-listener.yaml
+eventlistener.triggers.tekton.dev/acme-cicd-acm created
+
+```
+
+2. Then creating a route for event-listener service. You can do it from command line or easily from OpenShift dashboard. Once you get a route for the event listener (https://el-acme-cicd-acme-cicd.apps.cluster-509e.509e.sandbox1047.opentlc.com/) copy it.
+
+3. Go to your git repository > settings > webhooks. Add a new webhook for push command with event listener route.
+
+4. Push any change to the repo to test if it works.

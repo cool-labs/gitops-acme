@@ -1,0 +1,29 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  annotations:
+    version: 0.6.0
+  name: acme-cicd-acm
+  generation: 1
+  namespace: acme-cicd
+  finalizers:
+    - eventlisteners.triggers.tekton.dev
+  labels:
+    app: acme-cicd-acm
+spec:
+  namespaceSelector: {}
+  podTemplate: {}
+  resources: {}
+  serviceAccountName: pipeline
+  triggers:
+    - bindings:
+        - kind: TriggerBinding
+          ref: acme-cicd-acm-trigger-binding
+      interceptors:
+        - cel:
+            filter: >-
+              header.match('X-GitHub-Event', 'push') && body.ref ==
+              'refs/heads/master'
+      name: acme-cicd-acm-trigger-template
+      template:
+        ref: acme-cicd-acm-trigger-template
