@@ -81,6 +81,7 @@ pipelinerun.tekton.dev/deploy-using-acm-run-1 created
 
 # Adding an Event Listener to sync pipeline with Git repository
 
+## NOT WORKING :( Getting params.git-url command not found
 
 1. Manually creating Event Listener resources (event listener, trigger template & trigger binding).
 
@@ -109,4 +110,4 @@ eventlistener.triggers.tekton.dev/acme-cicd-acm created
 4. Push any change to the repo to test if it works.
 
 
-Thanks!!!!!!
+
