@@ -9,7 +9,7 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      entorno: ui
+      env: ui
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
@@ -25,7 +25,7 @@ spec:
   clusterReplicas: 2
   clusterSelector:
     matchExpressions:
-      - key: entorno
+      - key: env
         operator: In
         values:
           - dev
