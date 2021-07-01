@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   name: deploy-using-acm-run-1
-  namespace: acme-cicd
+  namespace: acme-acm
   labels:
     tekton.dev/pipeline: deploy-using-acm
 spec:
