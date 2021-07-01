@@ -2,8 +2,8 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
-  name: acm-demo-channel-dockerhub
-  namespace: acm-demo
+  name: acme-channel-dockerhub
+  namespace: acme-acm
 spec:
     type: HelmRepo
-    pathname:  https://artifactory-tools.apps.cluster-7428.7428.sandbox1420.opentlc.com/artifactory/generic-local/airbg-spain-dev
+    pathname:  https://artifactory-tools.cp4appl-demo-cluster-atci-83bcef15400c39e8de4fdef573e95a5c-0000.us-south.containers.appdomain.cloud/artifactory/generic-local/appmodernization

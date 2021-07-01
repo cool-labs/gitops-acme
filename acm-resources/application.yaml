@@ -2,8 +2,8 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: acm-demo-acme-insurance
-  namespace: acm-demo
+  name: acme-insurances
+  namespace: acme-acm
 spec:
   componentKinds:
     - group: apps.open-cluster-management.io
@@ -14,4 +14,4 @@ spec:
       - key: app
         operator: In
         values:
-          - acm-demo-acme-insurance
+          - acme-insurances

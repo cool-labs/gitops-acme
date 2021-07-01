@@ -2,22 +2,22 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: acm-demo-placement-ui
-  namespace: acm-demo
+  name: acme-acm-placement-ui
+  namespace: acme-acm
   labels:
-    app: acm-demo-acme-insurance
+    app: acme-insurances
 spec:
   clusterSelector:
     matchLabels:
-      env: ui
+      env: lab
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: acm-demo-placement-dev
-  namespace: acm-demo
+  name: acme-acm-placement-dev
+  namespace: acme-acm
   labels:
-    app: acm-demo-acme-insurance
+    app: acme-insurances
 spec:
   clusterConditions:
     - status: 'True'
