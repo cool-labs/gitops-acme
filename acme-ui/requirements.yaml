@@ -1,4 +1,4 @@
 dependencies:
   - name: acme-ui
     version: 0.0.9
-    repository: http://artifactory-artifactory.tools:8082/artifactory/generic-local/appmodernization
+    repository: https://artifactory-tools.cp4appl-demo-cluster-atci-83bcef15400c39e8de4fdef573e95a5c-0000.us-south.containers.appdomain.cloud/artifactory/generic-local/appmodernization
